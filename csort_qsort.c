@@ -163,4 +163,5 @@ int main(void) {
     printf("\n\nquick sort time :%lf", time_spent_quick);
     printf("\ncounting sort time :%lf", time_spent_counting);
     printf("\nnumbers sorted: %d", length);
+    return 0;
 }

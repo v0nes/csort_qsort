@@ -3,10 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
-int compare(const void* a,
-    const void* b) {
-    return (*(int*)a - *(int*)b);
-}
+
 int swaping(int* arr, int low, int high) {
     int i, j, num_buffer;
     i = low;
@@ -30,14 +27,17 @@ int swaping(int* arr, int low, int high) {
         j--;
     }
 }
+
 int quick_sort(int* arr, int lo, int hi) {
-    if (lo >= 0 && hi >= 0 && lo < hi) {
+    if (lo >= 0 && hi >= 0 && lo < hi) 
+    {
         int p = swaping(arr, lo, hi);
         quick_sort(arr, lo, p);
         quick_sort(arr, ++p, hi);
 
     }
 }
+
 int counting_sort(int* arr, int length) {
     clock_t begin_counting = clock();
     int max = arr[0];
@@ -102,6 +102,7 @@ int counting_sort(int* arr, int length) {
     clock_t counting_time = finish_counting - begin_counting;
     return(counting_time);
 }
+
 int main(void) {
     int length = 0, n = 0;
     int i = 0;

@@ -2,11 +2,10 @@
 
 ## Домашнее задание для команды 4
 
-### csort_qsort
+### csort_qsort.c
 
 
 
-### Explanation of the algorithm of the code:
 Программа считывает массив целочисленных чисел из файла **numbers.txt** и записывает его в диномический массив **arr** длины **length**.
 ```c   
   FILE* file;

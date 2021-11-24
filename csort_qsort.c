@@ -99,6 +99,7 @@ int counting_sort(int* arr, int length) {
             }
         }
     }
+    fclose(Sortfile);
     clock_t counting_time = finish_counting - begin_counting;
     return(counting_time);
 }
@@ -135,11 +136,10 @@ int main(void) {
         }
         buffer = getc(file);
     }
+    fclose(file);
 
     printf("\ncounting sort starts");
-
     clock_t counting_time = counting_sort(arr, length);
-
     printf("\ncounting sort ends");
 
 
@@ -158,6 +158,8 @@ int main(void) {
     for (i = 0; i < length; i++) {
         fprintf(quick_sort_file, "%d\n", *(arr + i));
     }
+    fclose(quick_sort_file);
+    
     double time_spent_counting = (double)(counting_time) / CLOCKS_PER_SEC;
     double time_spent_quick = (double)(finish_quick - begin_quick) / CLOCKS_PER_SEC;
     printf("\n\nquick sort time :%lf", time_spent_quick);
